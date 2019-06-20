@@ -1,0 +1,14 @@
+{
+  "usingComponents": {
+  "van-button": "vant-weapp/button",
+  "van-row": "vant-weapp/row",
+  "van-col": "vant-weapp/col",
+  "van-transition": "vant-weapp/transition",
+  "van-collapse": "vant-weapp/collapse",
+  "van-collapse-item": "vant-weapp/collapse-item",
+  "van-panel": "vant-weapp/panel"
+  },
+  "navigationBarBackgroundColor": "#666",
+  "navigationBarTitleText": "电影列表",
+  "navigationBarTextStyle": "white"
+}

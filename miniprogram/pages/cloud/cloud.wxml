@@ -1,0 +1,18 @@
+
+<view>云数据库</view>
+<button bindtap="insert">插入数据</button>
+<button bindtap="update">更新数据</button>
+<button bindtap="search">查找数据</button>
+<button bindtap="delete">删除数据</button>
+<view>云函数</view>
+<button bindtap="sum">调用sum</button>
+<button bindtap="getOpenid">调用Openid</button>
+<button bindtap="batchDelete">批量删除</button>
+<view>云存储</view>
+<button bindtap="upload">上传图片</button>
+<button bindtap="getImage">展示图片</button>
+<block wx:for="{{images}}" wx:key="{{index}}">
+  <image src="{{item.fileID}}"></image>
+  <button bindtap="download" data-fileid="{{item.fileID}}">下载</button>
+</block>
+

@@ -1,0 +1,39 @@
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.box{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: all 300ms ease;
+}
+.title{
+  text-align: center;
+  font-weight: bold;
+  line-height:150rpx;
+  color: red;
+}
+.time{
+  font-size: 32rpx;
+  line-height: 100rpx;
+  color:blue;
+  text-indent: 40rpx;
+}
+.cover{
+  display: block;
+  width: 90%;
+  padding-left: 10%;
+  height: 450rpx;
+}
+.cast{
+  font-size: 32rpx;
+  line-height: 60rpx;
+  color: #666;
+}
+
+.rating{
+  color:red;
+  font-size: 32rpx;
+  line-height: 60rpx;
+}

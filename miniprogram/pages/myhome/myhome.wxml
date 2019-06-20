@@ -1,0 +1,28 @@
+<!---我的主页-->
+<view class="mycontainer" style="background-image: url({{avatarUrl}})">
+</view>
+<view class='mymask'>
+  <view class="myinfo">
+    <image class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></image>
+    <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    <view class="userinfo-city">
+      <text>{{userInfo.language}}    {{userInfo.country}}</text>
+    </view>
+  </view>
+</view>
+<view class="mycomment">我的评论列表</view>
+<view class="mylist" wx:for="{{comment}}" wx:key="{{index}}">
+  <navigator class="mask">
+    <view class="comment-title">
+      <image src="{{item.moviecover}}" class="comment-img"></image>
+      <text class="comment-movie">{{item.moviename}}</text>
+    </view>
+  </navigator>
+  <navigator open-type="navigate" class="mylist-text">
+    <view class="mylist-score">
+      <text>打分：</text>
+      <van-rate value="{{item.score}}" readonly/>
+    </view>
+    <view class='comment-content'>{{item.content}}</view>
+  </navigator>
+</view>

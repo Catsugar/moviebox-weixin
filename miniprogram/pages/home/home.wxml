@@ -1,0 +1,21 @@
+<!--pages/myhome/myhome.wxml-->
+<!---我的主页-->
+<view class="myhome">
+  <view class="mybox">
+    <view class="mycover" catchtap='changeColor'>
+      <view class="myname" wx:if="{{isLogin}}">{{name}}</view>
+      <view class="myname" wx:else>请登录</view>
+      <button  class="btn" bindtap='addLove'>收藏</button>  
+      <text>共{{love}}人收藏</text>
+    </view>
+  </view>
+  <view class="myitem">我的丧日记:</view>
+  <view class="mydiary" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="myitem">
+      <text>{{item.author}}说：{{item.diary}}{{item.time}}</text>
+      <text>共{{item.love}}人收藏</text>
+      <button  size="mini" class="btn" bindtap='addLove'>收藏</button>
+    </view>
+  </view>
+</view>
+

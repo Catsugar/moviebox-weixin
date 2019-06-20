@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/cloud/cloud",
+    "pages/diary/diary",
+    "pages/myhome/myhome",
+    "pages/home/home",
+    "pages/comment/comment",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#666",
+    "navigationBarTitleText": "欢迎进入电影宝盒",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#444",
+    "selectedColor": "#000",
+    "backgroundColor": "#eee",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/shouye.png",
+        "selectedIconPath": "images/shouyexuanzhong.png"
+      },
+      {
+        "pagePath": "pages/diary/diary",
+        "text": "电影",
+        "iconPath": "images/qingdan.png",
+        "selectedIconPath": "images/qingdanxuanzhong.png"
+      },
+      {
+        "pagePath": "pages/myhome/myhome",
+        "text": "我的",
+        "iconPath": "images/wode.png",
+        "selectedIconPath": "images/wodexuanzhong.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

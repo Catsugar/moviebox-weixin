@@ -1,0 +1,20 @@
+<!--pages/diary/diary.wxml-->
+<view class="title">电影列表</view>
+<view class="list" wx:for="{{dataList}}" wx:key="{{index}}">
+  <van-panel title="{{item.title}}" class="box">
+    <view class="time">上映时间：{{item.year}}</view>
+    <van-row gutter="20">
+      <van-col span="12">
+        <image src='{{item.images.small}}'alt="{{item.alt}}" class="cover"></image>
+      </van-col>
+      <van-col span="12">
+        <view>演员：</view>
+        <view class="cast" wx:for="{{item.casts}}" wx:key="{{index}}">
+          <text class="castname">{{item.name}}</text>
+        </view>
+        <view class="rating">电影评分：{{item.rating.average}}</view>
+        <van-button plain type="primary" size="small" bindtap="gotoComment" data-movieid="{{item.id}}">电影详情</van-button>
+      </van-col>
+    </van-row>
+  </van-panel>
+</view>
