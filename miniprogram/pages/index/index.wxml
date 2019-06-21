@@ -4,14 +4,15 @@
   <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
     <view>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <text wx:if="{{!logged}}"  class="userinfo-nickname">请点击头像登陆</text>
+      <text wx:if="{{logged}}" class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
   </view>
   <!-- 轮播图 -->
   <view style="background-image: url({{avatarUrl}})" class="slide-image"></view>
   <!-- 评价列表 -->
   <view class="mylist" wx:for="{{allcomment}}" wx:key="{{index}}">
-    <navigator class="mask">
+    <navigateTo class="mask">
       <view class="comment-title">
         <image class="userinfo-avatar" style="background-image: url({{item.avatar}})"></image>
         <text style="color:#666">{{item.author}}</text>
@@ -19,13 +20,19 @@
         <text class="comment-movie" style='font-size: 40rpx'>{{item.moviename}}</text>
         <image src="{{item.moviecover}}" class="comment-img"></image>
       </view>
-    </navigator>
-    <navigator open-type="navigate" class="mylist-text">
-      <view class="mylist-score">
-        <text>打分：</text>
-        <van-rate value="{{item.score}}" readonly/>
+    </navigateTo>
+    <navigateTo open-type="navigate" class="mylist-text">
+      <view class="comment-middle">
+        <view class="mylist-score">
+          <text>打分：</text>
+          <van-rate value="{{item.score}}" readonly/>
+        </view>
+        <text>{{item.time}}</text>
       </view>
       <view class='comment-content'>{{item.content}}</view>
-    </navigator>
+      <block wx:for="{{item.fileIds}}" wx:key="{{index}}" class="imagelist">
+        <image src="{{item}}" lazy-load="true" class="commentimage"></image>
+      </block>
+    </navigateTo>
   </view>
 </view>

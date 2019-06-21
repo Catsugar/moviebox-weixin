@@ -66,7 +66,6 @@
   flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
-  margin-bottom: 40rpx;
   min-height: 140rpx;
   width: 100%;
   background: #fff;
@@ -77,11 +76,11 @@
   transition: all 300ms ease;
 }
 .mylist-text {
-  width: 100%;
+  width: 90%;
   line-height:40px;
   font-size: 30rpx;
   color: #666;
-  padding: 0 0 0 40rpx;
+  padding: 0 5%;
 }
 .comment-title{
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -91,7 +90,7 @@
   justify-content: flex-start;
   align-items:center;
 
-  background-color:rgba(255,255,255,0.8);
+  background-color:rgba(255,255,255,0.9);
 }
 .mask{
   width: 100%;
@@ -108,6 +107,13 @@
   color: #666;
   font-weight: bold;
 }
+/*中间打分*/
+.comment-middle{
+  display: flex;
+  flex-flow:row nowrap;
+  justify-content:space-between;
+  align-items:center;
+}
 .mylist-score{
   font-weight:bold;
   display: flex;
@@ -116,6 +122,17 @@
   align-items:center;
   color: #d00;
 }
+.mylist-score van-rate{
+  margin-bottom: -10rpx;
+}
 .comment-content{
   text-indent: 50rpx;
+}
+.imagelist{
+ display:flex;
+ flex-flow: row wrap;
+ justify-content: flex-start;
+}
+.commentimage{
+  width:500rpx;
 }

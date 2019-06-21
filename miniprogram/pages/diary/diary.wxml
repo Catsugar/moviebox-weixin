@@ -5,7 +5,7 @@
     <view class="time">上映时间：{{item.year}}</view>
     <van-row gutter="20">
       <van-col span="12">
-        <image src='{{item.images.small}}'alt="{{item.alt}}" class="cover"></image>
+        <image src='{{item.images.small}}'alt="{{item.alt}}" class="cover" lazy-load="true"></image>
       </van-col>
       <van-col span="12">
         <view>演员：</view>

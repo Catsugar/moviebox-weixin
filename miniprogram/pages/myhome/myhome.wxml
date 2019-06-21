@@ -19,10 +19,16 @@
     </view>
   </navigator>
   <navigator open-type="navigate" class="mylist-text">
-    <view class="mylist-score">
-      <text>打分：</text>
-      <van-rate value="{{item.score}}" readonly/>
+    <view class="comment-middle">
+      <view class="mylist-score">
+        <text>打分：</text>
+        <van-rate value="{{item.score}}" readonly/>
+      </view>
+      <text>{{item.time}}</text>
     </view>
     <view class='comment-content'>{{item.content}}</view>
+    <block wx:for="{{item.fileIds}}" wx:key="{{index}}" class="imagelist">
+      <image src="{{item}}" lazy-load="true" class="commentimage"></image>
+    </block>
   </navigator>
 </view>

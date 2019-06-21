@@ -118,7 +118,7 @@ Page({
          console.log(tempFilePaths);
          wx.cloud.uploadFile({
            // 指定上传到的云路径
-           cloudPath: new Date().getTime+'.png',
+           cloudPath: new Date().getTime()+'.png',
            // 指定要上传的文件的小程序临时文件路径
            filePath: tempFilePaths[0],
            // 成功回调
