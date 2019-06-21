@@ -8,7 +8,7 @@ Page({
     logged: false,
     takeSession: false,
     requestResult: '',
-    allcomment: [],
+    allcomment: []
   },
   onLoad: function() {
     // 获取用户信息
@@ -43,6 +43,7 @@ Page({
     }).catch(err => {
       console.log(err);
     })
+    
   },
   onGetUserInfo: function(e) {
     if (!this.logged && e.detail.userInfo) {

@@ -4,7 +4,7 @@
   <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
     <view>
-    <van-button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" type="warning" size="small">请我登陆</van-button>
+    <van-button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" type="warning" size="small">点我登陆</van-button>
     <text wx:if="{{logged}}" class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
   </view>
@@ -30,9 +30,9 @@
         <text>{{item.time}}</text>
       </view>
       <view class='comment-content'>{{item.content}}</view>
-      <block wx:for="{{item.fileIds}}" wx:key="{{index}}" class="imagelist">
+      <view wx:for="{{item.fileIds}}" wx:key="{{index}}" class="imagelist">
         <image src="{{item}}" lazy-load="true" class="commentimage"></image>
-      </block>
+      </view>
     </navigateTo>
   </view>
 </view>

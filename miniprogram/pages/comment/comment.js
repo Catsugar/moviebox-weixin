@@ -60,6 +60,15 @@ Page({
     wx.showLoading({
       title: '评论中',
     })
+    //如果没的登录
+    if (this.data.userInfo=={}){
+      this.setData({
+        userInfo:{
+          nickName:"路人",
+          avatarUrl: './user-unlogin.png',
+        }
+      })
+    }
     //上传图片云存储
     console.log("当前时间是"+new Date().getTime());
     let promiseArr = [];
