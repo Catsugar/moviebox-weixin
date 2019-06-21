@@ -4,8 +4,8 @@
   <view class="userinfo">
     <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})"></button>
     <view>
-      <text wx:if="{{!logged}}"  class="userinfo-nickname">请点击头像登陆</text>
-      <text wx:if="{{logged}}" class="userinfo-nickname">{{userInfo.nickName}}</text>
+    <van-button wx:if="{{!logged}}" open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" type="warning" size="small">请我登陆</van-button>
+    <text wx:if="{{logged}}" class="userinfo-nickname">{{userInfo.nickName}}</text>
     </view>
   </view>
   <!-- 轮播图 -->

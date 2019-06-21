@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "van-button": "vant-weapp/button",
     "van-rate": "vant-weapp/rate"
   }
 }
