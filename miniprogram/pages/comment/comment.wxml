@@ -1,0 +1,51 @@
+<view class="detail">
+  <view class="detail-container" style='background:url({{detail.images.large}})' no-repeat top  cover>
+  </view>
+  <view class='detail-mask'></view>
+  <view class='detail-box'>
+    <image src="{{detail.images.large}}" class="detail-img"></image>
+    <view class='detail-info'>
+      <view class='detail-name'>{{detail.title}}</view>
+      <view>{{detail.original_title}}</view>
+      <view class='detail-rating'>评分：{{detail.rating.average}}分</view>
+      <view class='detail-year'>年份：{{detail.year}}</view>
+      <view>演员：</view>
+        <view class="cast" wx:for="{{detail.casts}}" wx:key="{{index}}">
+          <text class="castname">{{item.name}}</text>
+        </view>
+      </view>
+  </view>
+  <van-panel title="简介" desc="描述信息" class='detail-summary' >
+    <view class="tag" wx:for="{{detail.tags}}" wx:for-item="item" wx:key="{{index}}">
+      <van-tag mark type="success">{{item}}</van-tag>
+    </view>
+    <view >{{detail.summary}}</view>
+  </van-panel>
+  <view class="review" wx:for="{{detail.popular_reviews}}" wx:key="{{index}}">
+     <van-panel title="{{item.title}}" >
+        <view class='review-author'>作者：{{item.author.name}}</view>
+        <view class='review-summary'>{{item.summary}}</view>
+     </van-panel>
+  </view>
+</view>
+<van-button type="info" class='commentbtn' size="small" bindtap="onOpen">点评</van-button>
+<!--弹出层--->
+<van-popup show="{{ show }}" bind:close="onClose" overlay position="bottom"
+>
+  <view class='contentbox'>
+    <view class='commenttitle'>电影评论</view>
+    <van-field value="{{content}}" autosize type="textarea" placeholder="请输入评论" adjust-position  bind:change="onContent"/>
+    <view class="ratebox">
+      <text>打一下分吧：</text>
+      <van-rate  value="{{score}}" icon="like" void-icon="like-o" bind:change="onRate"/>
+    </view>
+    <view class="imagebox" > 
+      <image src="{{item}}" wx:for="{{images}}" wx:key="{{index}}"/>
+    </view>
+    <view class="btnbox">
+      <van-button slot="button"  size="small" type="info" bindtap="onUpload" class="submitbtn">上传</van-button>
+      <van-button slot="button"  size="small" type="danger" bindtap="onSubmit" class="submitbtn">确定</van-button>
+      <van-button slot="button" size="small"  bindtap="onClose" class="submitbtn">取消</van-button>
+    </view>
+  </view>
+</van-popup>
