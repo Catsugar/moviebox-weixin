@@ -11,7 +11,7 @@
 
 
 ## 地址，微信扫二维码：
-![截图1](https://catsugar.github.io/pics/tiyan.jpg)
+![截图1](https://catsugar.github.io/pics/saoma.png)
 
 
 
